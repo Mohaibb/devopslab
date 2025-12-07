@@ -26,8 +26,14 @@ jobs:
         working-directory: ./app
         run: npm install
 
+      - name: Archive app into zip
+        run: |
+          cd app
+          zip -r ../app.zip .
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "web-devopslab-ms"   #App Service name
-          package: "./app"
+          app-name: "web-devopslab-ms"
+          package: "./app.zip"
+            # slot-name: "production" ?
