@@ -1,0 +1,16 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate.*
+crash.log
+
+# macOS
+.DS_Store
+
+# Build/package
+app.zip
